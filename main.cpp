@@ -28,7 +28,25 @@ void CreateMatrix(std::vector<std::vector<double> >& matrix, std::vector<double>
     std::cout << '\n';
     std::cout <<"Done! \n";
 }
-
+void Nevyazka_idk_know_how_to_call_it(std::vector<std::vector<double> >& matrix, std::vector<double>& b, std::vector<double>& val){
+    const int SIZE = b.size();
+    std::vector<double> r;
+    int i = 0, j = 0;
+    for(i = 0; i < SIZE; i++){
+        double sum = 0;
+        for(j = 0; j < SIZE; j++){
+            sum+=matrix[i][j] * val[j];
+        }
+        r.push_back(sum - b[i]);
+        j = 0;
+        
+    }
+    std::cout << "\nNevyazka:\n";
+    for(auto i : r){
+        std::cout << i << " ";
+    }
+    std::cout << "\n";
+}
 void SeidelMethod(std::vector<std::vector<double> >& a,
                 std::vector<double>& B_matrix, const int n){
     for(int i = 0; i < n; i++){
@@ -78,10 +96,11 @@ void SeidelMethod(std::vector<std::vector<double> >& a,
     std::cout<<"\n The solution is as follows:\n";
     for (i=0;i<n;i++)
         std::cout<<"x"<<i<<" = "<<x[i]<<std::endl;  
+    Nevyazka_idk_know_how_to_call_it(a, B_matrix, x);
 }
 
 int main(){
-    std::cout.precision(4);
+    std::cout.precision(6);
     std::cout.setf(std::ios::fixed);
     int N;
     std::cout << "Put N size for matrix:\n";
