@@ -78,50 +78,6 @@ void SeidelMethod(std::vector<std::vector<double> >& a,
     std::cout<<"\n The solution is as follows:\n";
     for (i=0;i<n;i++)
         std::cout<<"x"<<i<<" = "<<x[i]<<std::endl;  
-
-
-
-   /* for(i = 0; i < N; i++){
-        for(k=i+1; k<N; k++){
-            if(abs(matrix[i][i]) < abs(matrix[k][i])){
-                for(j = 0; j<= N; j++){
-                    double temp = matrix[i][j];
-                    matrix[i][j] = matrix[k][j];
-                    matrix[k][j] = temp;
-                }
-            }
-        }
-    }
-    std::cout << "Iter: " << std::setw(5);
-    for(i = 0; i < N; i++){
-        std::cout << "x" << i << std::setw(8);
-    }
-    std::cout << "\n----------------------------------------------------------------";
-    
-    do{
-        std::cout << "\n" << count + 1 << "." << std::setw(16);
-        for(i = 0; i < N; i++){
-            y = x[i];
-            x[i] = matrix[i][N];
-            for(j = 0; j < N; j++){
-                if(j != i){
-                    x[i] = x[j] - matrix[i][j] * x[j];
-                }
-            }
-            x[i] = x[i] / matrix[i][i];
-            if(abs(x[i] - y) <= eps){
-                flag++;
-            }
-            std::cout << x[i] << std::setw(18);
-        }
-        std::cout << "\n";
-        count++;
-    }while(flag < N);
-    std::cout << "\nThe solution is as follows:\n";
-    for(int i = 0; i < N; i++){
-        std::cout << "x" << i << " = " << x[i] << std::endl;
-    }
-    */
 }
 
 int main(){
